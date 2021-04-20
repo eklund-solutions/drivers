@@ -1,5 +1,7 @@
 package com.erik.driver;
 
+import java.util.Calendar;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,15 +11,11 @@ import javax.persistence.Id;
 @Entity
 public class Driver {
 
-    private String name;
-    private String personalNumber;
-    private int hourlySalary;
-
-
-    public Integer calculateMonthlySalary(int hoursWorked)
-    {
-        return hoursWorked * hourlySalary;            
-    }
+    private String name;            // Namn på förare
+    private int birthYear;          // Födelseår
+    private boolean isVeteran;      // Är föraren från 50 år är föraren veteran
+    private int currentCarId;       // Vilken bil kör man för näravarnde
+   
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -25,42 +23,40 @@ public class Driver {
 
     public Integer getId() {
         return id;
-      }
+    }
+    public String getName() {
+        return name;
+    }
+    public Integer getBirthYear() {
+        return birthYear;
+    }
+    public boolean getIsVeteran() {
+        return isVeteran;
+    }
+    public Integer getCurrentCarId() {
+        return currentCarId;
+    }
+
     
-      public void setId(Integer id) {
-        this.id = id;
-      }
-
-      public void setName(String v)
-      {
-          name = v;
-      }
-  
-      public void setHourlySalary(int v)
-      {
-          hourlySalary  = v;
-      }
-
-      public String getName()
-      {
-          return name;
-      }
-      public int getHourlySalary()
-      {
-          return hourlySalary;
-      }
-  
-      public String getPersonalNumber()
-      {
-          return personalNumber;
-      }
-      public void setPersonalNumber(String v)
-      {
-          personalNumber  = v;
-      }
-
-  
-
+    public void setName(String v)
+    {
+        name = v;
+    }
+    public void setBirthYear(int v)
+    {
+        birthYear = v;
+    }
+    public void setCurrentCarId(int v)
+    {
+        currentCarId = v;
+    }
+ 
+ 
+    public boolean calculateIfDriverIsVeteran()
+    {
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        return currentYear - birthYear >= 50;            
+    }
     
 }
 

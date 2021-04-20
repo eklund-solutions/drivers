@@ -1,6 +1,5 @@
 package com.erik.driver;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +18,8 @@ public class DriverController {
     @CrossOrigin()
     String empty()
     {
-        return "jepp";
+        return "Driver API för JAd-21 (Erik Eklund)";
     }
-
 
 
     @GetMapping(path="/driver")

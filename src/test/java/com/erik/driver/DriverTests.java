@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 public class DriverTests {
 	@Test
 	void calculateMonthlySalaryReturnsCorrectValue() {
-		Integer hours = 20;
+		
 		Driver driver = new Driver();	
-		driver.setHourlySalary(100);			
-		driver.setName("erik Holmberg");
-		driver.setPersonalNumber("19720803");
+		driver.setName("Erik Testperson");
+		driver.setBirthYear(1984);			
+		driver.setCurrentCarId(0);
 
-		assertThat(driver.calculateMonthlySalary(hours)).isEqualTo(2000);
+		assertThat(driver.calculateIfDriverIsVeteran()).isEqualTo(false);
 
 	}
     
