@@ -58,7 +58,7 @@ public class DriverController {
     @CrossOrigin()
     boolean deletePost(@PathVariable Integer id) {
         boolean status = false;
-        // Kontrollera om spelaren finns
+        // Kontrollera om föraren finns
         if( driverService.existsById(id) ) {
             // Ta då bort den
             driverService.deleteById(id);
