@@ -28,11 +28,16 @@ public class DriverService {
         return driverRepository.findById(id).get();
     }
 
-
     Driver addDriver(Driver d){
         return driverRepository.save(d);
     }
 
+    Boolean existsById(int id) {
+        return driverRepository.existsById(id);
+    }
     
+    void deleteById(int id) {
+        driverRepository.deleteById(id);
+    }
     
 }
