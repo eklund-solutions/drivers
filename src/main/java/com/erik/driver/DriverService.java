@@ -28,6 +28,11 @@ public class DriverService {
         return driverRepository.findById(id).get();
     }
 
+
+    Driver addDriver(Driver d){
+        return driverRepository.save(d);
+    }
+
     
     
 }

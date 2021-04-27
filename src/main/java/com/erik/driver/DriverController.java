@@ -47,6 +47,8 @@ public class DriverController {
     @CrossOrigin()
     ResponseEntity<Object> add(@RequestBody Driver d) {
 
+        driverService.addDriver(d);
+
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
         .path("/{id}")
         .buildAndExpand(d.getId())
