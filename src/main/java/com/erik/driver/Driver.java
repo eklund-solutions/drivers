@@ -13,7 +13,7 @@ public class Driver {
 
     private String name;            // Namn på förare
     private int birthYear;          // Födelseår
-    private boolean isVeteran;      // Är föraren från 50 år är föraren veteran
+    private boolean isVeteran = calculateIfDriverIsVeteran();      // Är föraren från 50 år är föraren veteran
     private int currentCarId;       // Vilken bil kör man för näravarnde
    
 
